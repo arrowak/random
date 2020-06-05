@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Background Video</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            clear: both;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #main-container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #image-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        #img-pubg {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #video-container {
+            position: absolute;
+            top: 28vh;
+            left: 0;
+            width: 100vw;
+            height: 56vw;
+            z-index: 1;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('click', function () {
+            var v = document.getElementById("video-pubg");
+            v.play();
+        });
+
+        setTimeout(function () {
+            document.getElementById("main-container").click();
+        }, 2000);
+    </script>
+</head>
+<body>
+<div id="main-container">
+    <div id="video-container">
+        <video id="video-pubg" controls autoplay=true width="140%" height="100%">
+            <source src="pubg_v.mp4"
+                    type="video/mp4">
+            Sorry, your browser doesn't support embedded videos.
+        </video>
+    </div>
+    <div id="image-container">
+        <img id="img-pubg" src="PUBG-600x600.png" alt="PubG Image">
+    </div>
+</div>
+</body>
+</html>
