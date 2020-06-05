@@ -39,7 +39,7 @@
         #video-container {
             position: absolute;
             top: 28vh;
-            left: 0;
+            left: -10vh;
             width: 100vw;
             height: 56vw;
             z-index: 1;
@@ -47,27 +47,31 @@
     </style>
 
     <script>
-        document.addEventListener('click', function () {
-            var v = document.getElementById("video-pubg");
-            v.play();
-        });
+        var v = document.getElementById("video-pubg");
+        v.play();
 
-        setTimeout(function () {
-            document.getElementById("main-container").click();
-        }, 2000);
+        function togglePlay() {
+            var v = document.getElementById("video-pubg");
+            if (v.paused) {
+                v.play();
+            } else {
+                v.pause();
+            }
+        }
+
     </script>
 </head>
 <body>
 <div id="main-container">
     <div id="video-container">
         <video id="video-pubg" controls autoplay=true width="140%" height="100%">
-            <source src="pubg_v.mp4"
+            <source src="https://github.com/arrowak/random/raw/master/pubg_v.mp4"
                     type="video/mp4">
             Sorry, your browser doesn't support embedded videos.
         </video>
     </div>
-    <div id="image-container">
-        <img id="img-pubg" src="PUBG-600x600.png" alt="PubG Image">
+    <div id="image-container" onclick="togglePlay();">
+        <img id="img-pubg" src="https://github.com/arrowak/random/raw/master/PUBG-600x600.png" alt="PubG Image">
     </div>
 </div>
 </body>
